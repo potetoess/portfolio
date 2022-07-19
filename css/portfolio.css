@@ -1,0 +1,10 @@
+header{
+    background-color: salmon;
+    text-align: center;
+}
+header img{
+    width: 400px;
+    height: 400px;
+    border-radius: 150px;
+    border: 20px solid pink;
+}
