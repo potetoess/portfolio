@@ -1,10 +1,14 @@
 header{
     background-color: salmon;
     text-align: center;
+    padding: 5%;
+}
+h1{
+    font-size: 40px;
 }
 header img{
     width: 400px;
     height: 400px;
-    border-radius: 150px;
-    border: 20px solid pink;
+    border-radius: 50%;
+    border: 20px solid rgb(231, 54, 84);
 }
