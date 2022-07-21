@@ -1,44 +1,117 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Qian Hui's Portfolio</title>
-        <link rel ="stylesheet" type = "text/css" href ="css/portfolio.css">
-    </head>
-    <body>
-        <!--tabs-->
-        <div class="tab">
-            <button class="tablink" onclick="openPage('About')">About</button>
-            <button class="tablink" onclick="openPage('Artworks')">Artworks</button>
-            <button class="tablink" onclick="openPage('Work Experience')">Work Experience</button>
-          </div>
-          
-          <!-- Tab content -->
-          <div id="About" class="tabcontent">
-            <h3>About</h3>
-            <p>My past education.</p>
-          </div>
-          
-          <div id="Artworks" class="tabcontent">
-            <h3>Artworks</h3>
-            <p>These are the artworks that I have done so far.</p>
-          </div>
-          
-          <div id="Work Experience" class="tabcontent">
-            <h3>Work Experience</h3>
-            <p>This is my work experience for the past few years.</p>
-          </div>
-          
-        <!--header element-->
-        <header>
-            <img src="img/myself.jpeg">
-            <h1>Koh Qian Hui</h1>
-        </header>
-        
-        <!--main element-->
-        <h2>About Me</h2>
-        <p>I am a hardworking, competent, and detail-oriented person.
-            I am a Diploma holder of the course Business Process and Systems Engineering.
-            Although I have limited work experience, what I have learnt in my Diploma course has taught me all the necessary skills I need to work in many companies.
-        </p>
-    </body>
+
+<head>
+  <title>Qian Hui's Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="css/portfolio.css">
+
+</head>
+
+<body>
+  <div class="tab">
+    <button class="tablink" onclick="openPage('About', this, 'red')">About</button>
+    <button class="tablink" onclick="openPage('Artworks', this, 'green')" id="defaultOpen">Artworks</button>
+    <button class="tablink" onclick="openPage('Work Experience', this, 'blue')">Work Experience</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="About" class="tabcontent">
+    <h3>About</h3>
+    <p>My past education.</p>
+  </div>
+
+  <div id="Artworks" class="tabcontent">
+    <h3>Artworks</h3>
+    <p>These are the artworks that I have done so far.</p>
+  </div>
+
+  <div id="Work Experience" class="tabcontent">
+    <h3>Work Experience</h3>
+    <p>This is my work experience for the past few years.</p>
+  </div>
+
+  <!--header element-->
+  <header>
+    <img src="img/myself.jpeg">
+    <h1>Koh Qian Hui</h1>
+  </header>
+
+  <!--main element-->
+  <h2>About Me</h2>
+  <p>I am a hardworking, competent, and detail-oriented person.
+    I am a Diploma holder of the course Business Process and Systems Engineering.
+    Although I have limited work experience, what I have learnt in my Diploma course has taught me all the necessary
+    skills I need to work in many companies.
+  </p>
+
+  <script>
+    function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+</body>
+
+
+
 </html>
+
+
+
+
+
+
+
+
+<!-- <style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+</style> -->
