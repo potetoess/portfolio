@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <title>Qian Hui's Portfolio</title>
   <link rel="stylesheet" type="text/css" href="css/portfolio.css">
@@ -9,7 +9,7 @@
 
 <body>
   <div class="tab">
-    <button class="tablink" onclick="openPage('Home', this, '#ff4d4d')"id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('Home', this, '#ff4d4d')" id="defaultOpen">Home</button>
     <button class="tablink" onclick="openPage('Artworks', this, '#ff8080')">Artworks</button>
     <button class="tablink" onclick="openPage('Work Experience', this, '#ffcccc')">Work Experience</button>
   </div>
@@ -17,7 +17,7 @@
   <!-- Tab content -->
   <div id="Home" class="tabcontent">
     <header>
-      <img src ="img/myself.jpeg">
+      <img src="img/myself.jpeg">
     </header>
     <h3>About Me</h3>
     <p>I am a hardworking, competent, and detail-oriented person.
@@ -29,6 +29,75 @@
   <div id="Artworks" class="tabcontent">
     <h3>Artworks</h3>
     <p>These are the artworks that I have done so far.</p>
+
+    <body>
+      <h2 style="text-align:center">O-Level Artworks</h2>
+
+      <div class="container">
+        <div class="mySlides">
+          <div class="numbertext">1 / 6</div>
+          <img src="img/final1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 6</div>
+          <img src="img/final2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 6</div>
+          <img src="img/final.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 6</div>
+          <img src="img/board1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">5 / 6</div>
+          <img src="img/board2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 6</div>
+          <img src="img_snow_wide.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <img class="demo cursor" src="img/final1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/final2.jpg" style="width:100%" onclick="currentSlide(2)"
+              alt="Cinque Terre">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/final.jpg" style="width:100%" onclick="currentSlide(3)"
+              alt="Mountains and fjords">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/board1.jpg" style="width:100%" onclick="currentSlide(4)"
+              alt="Northern Lights">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img/board2.jpg" style="width:100%" onclick="currentSlide(5)"
+              alt="Nature and sunrise">
+          </div>
+          <div class="column">
+            <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(6)"
+              alt="Snowy Mountains">
+          </div>
+        </div>
+      </div>
+    </body>
   </div>
 
   <div id="Work Experience" class="tabcontent">
@@ -36,7 +105,7 @@
     <p>This is my work experience for the past few years.</p>
   </div>
 
-  
+
 
 
 
@@ -58,6 +127,36 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
   </script>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("demo");
+      let captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
 </body>
 
 
