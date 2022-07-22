@@ -5,11 +5,9 @@ body{
 header{
     background-color: salmon;
     text-align: center;
-    padding: 5%;
+    padding: 2%;
 }
-h1{
-    font-size: 40px;
-}
+
 header img{
     width: 400px;
     height: 400px;

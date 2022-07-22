@@ -9,15 +9,21 @@
 
 <body>
   <div class="tab">
-    <button class="tablink" onclick="openPage('About', this, 'red')">About</button>
-    <button class="tablink" onclick="openPage('Artworks', this, 'green')" id="defaultOpen">Artworks</button>
-    <button class="tablink" onclick="openPage('Work Experience', this, 'blue')">Work Experience</button>
+    <button class="tablink" onclick="openPage('Home', this, '#ff4d4d')"id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('Artworks', this, '#ff8080')">Artworks</button>
+    <button class="tablink" onclick="openPage('Work Experience', this, '#ffcccc')">Work Experience</button>
   </div>
 
   <!-- Tab content -->
-  <div id="About" class="tabcontent">
-    <h3>About</h3>
-    <p>My past education.</p>
+  <div id="Home" class="tabcontent">
+    <header>
+      <img src ="img/myself.jpeg">
+    </header>
+    <h3>About Me</h3>
+    <p>I am a hardworking, competent, and detail-oriented person.
+      I am a Diploma holder of the course Business Process and Systems Engineering.
+      Although I have limited work experience, what I have learnt in my Diploma course has taught me all the necessary
+      skills I need to work in many companies.</p>
   </div>
 
   <div id="Artworks" class="tabcontent">
@@ -30,19 +36,9 @@
     <p>This is my work experience for the past few years.</p>
   </div>
 
-  <!--header element-->
-  <header>
-    <img src="img/myself.jpeg">
-    <h1>Koh Qian Hui</h1>
-  </header>
+  
 
-  <!--main element-->
-  <h2>About Me</h2>
-  <p>I am a hardworking, competent, and detail-oriented person.
-    I am a Diploma holder of the course Business Process and Systems Engineering.
-    Although I have limited work experience, what I have learnt in my Diploma course has taught me all the necessary
-    skills I need to work in many companies.
-  </p>
+
 
   <script>
     function openPage(pageName, elmnt, color) {
