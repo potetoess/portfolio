@@ -10,7 +10,7 @@ body {
 }
 
 .homeImg img {
-  width: 400px;
+  width: auto;
   height: 400px;
   border-radius: 50%;
   border: 20px solid rgb(231, 54, 84);
